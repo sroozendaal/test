@@ -1,0 +1,165 @@
+{
+  "competitors": [
+    {
+      "vendor": "Palo Alto Networks",
+      "product": "PA-Series NGFW",
+      "category": "Premium/Enterprise",
+      "specs": {
+        "architecture": "Software-based engine (x86)",
+        "throughput": "Up to 100+ Gbps (model dependent)",
+        "sslInspection": "GPU-assisted, separate licensing",
+        "sdwan": "Prisma SD-WAN (separate subscription)",
+        "ztna": "Prisma Access (separate subscription)",
+        "threatIntel": "Unit 42 (separate feed integration)",
+        "fabric": "Limited; requires Prisma components"
+      },
+      "strengths": [
+        "Strong endpoint protection integration (Cortex XDR)",
+        "Mature cloud-native deployment",
+        "Established in Fortune 500",
+        "Advanced threat correlation"
+      ],
+      "weaknesses": [
+        "Higher TCO (separate subscriptions for SD-WAN, ZTNA, IPS)",
+        "Software-based engine = thermal/power concerns at scale",
+        "Steeper learning curve for management console",
+        "Multiple management planes (Panorama + separate SD-WAN console)"
+      ],
+      "vsFortigate": {
+        "performanceAdvantage": "FortiGate custom ASIC/SPU delivers superior throughput per watt; Palo Alto x86 software engine struggles at scale",
+        "integrationAdvantage": "FortiGate: SD-WAN + ZTNA native; Palo Alto charges separately for each—significant TCO delta",
+        "tcoAdvantage": "FortiGate typically 20-30% lower for equivalent capability across full stack",
+        "operationalAdvantage": "Single FortiManager vs. multiple Palo Alto management consoles"
+      }
+    },
+    {
+      "vendor": "Cisco",
+      "product": "Firepower NGFW",
+      "category": "Enterprise",
+      "specs": {
+        "architecture": "x86-based (ASA platform evolution)",
+        "throughput": "Up to 60+ Gbps",
+        "sslInspection": "Integrated with IPS, CPU-dependent",
+        "sdwan": "Meraki SD-WAN (separate product)",
+        "ztna": "Cisco Secure Firewall (limited, immature)",
+        "threatIntel": "Talos (Cisco threat research)",
+        "fabric": "Catalyst switch integration; operationally fragmented"
+      },
+      "strengths": [
+        "Strong LAN/WAN portfolio (Catalyst switches, Meraki)",
+        "Talos threat intelligence quality",
+        "Familiar to enterprise operations teams",
+        "Integrated Secure Email Gateway"
+      ],
+      "weaknesses": [
+        "Performance ceiling lower than FortiGate/Palo Alto at equivalent price",
+        "FMC (Firepower Management Center) operational complexity",
+        "SD-WAN + security = multiple consoles and workflows",
+        "ZTNA story underdeveloped; legacy ASA DNA"
+      ],
+      "vsFortigate": {
+        "performanceAdvantage": "FortiGate delivers 2-3x superior throughput on comparable hardware class",
+        "integrationAdvantage": "FortiGate Fabric unified; Cisco = separate switch, firewall, SD-WAN operational silos",
+        "operationalAdvantage": "FortiManager single-pane management vastly simpler than FMC + Meraki + separate SD-WAN",
+        "easeOfUseAdvantage": "FortiGate policy GUI more intuitive; FMC steeper learning curve"
+      }
+    },
+    {
+      "vendor": "Check Point",
+      "product": "Quantum Firewall",
+      "category": "Enterprise/Hybrid",
+      "specs": {
+        "architecture": "Software + some hardware acceleration",
+        "throughput": "Up to 80+ Gbps",
+        "sslInspection": "Native TLS inspection, integrated threat prevention",
+        "sdwan": "Harmony Secure Edge (separate, newer product)",
+        "ztna": "Harmony Access (separate subscription)",
+        "threatIntel": "ThreatCloud (global cloud-based threat visibility)",
+        "fabric": "Limited; Harmony components operate separately"
+      },
+      "strengths": [
+        "Strong in financial services (legacy entrenchment)",
+        "Advanced threat prevention engine",
+        "ThreatCloud global scale (billions of events/day)",
+        "Solid compliance/audit capabilities"
+      ],
+      "weaknesses": [
+        "SmartConsole UI/UX outdated and cumbersome (industry criticism)",
+        "Separate licensing for ZTNA, SD-WAN, threat prevention drives up costs",
+        "Steeper operational learning curve",
+        "Declining innovation velocity vs. competitors"
+      ],
+      "vsFortigate": {
+        "performanceAdvantage": "FortiGate ASIC advantage ensures consistent performance; Check Point software-based scaling challenges",
+        "easeOfUseAdvantage": "FortiGate GUI/CLI significantly simpler than SmartConsole",
+        "tcoAdvantage": "FortiGate integrated model (SD-WAN + ZTNA native) vs. Check Point à la carte licensing",
+        "operationalAdvantage": "Single FortiManager vs. fragmented Harmony product suite"
+      }
+    },
+    {
+      "vendor": "Sophos",
+      "product": "Sophos XG/XGS Firewall",
+      "category": "Mid-market/SMB",
+      "specs": {
+        "architecture": "x86-based appliance",
+        "throughput": "Up to 40 Gbps (XGS4600+)",
+        "sslInspection": "Available, CPU-dependent",
+        "sdwan": "Sophos SD-WAN (simpler offering)",
+        "ztna": "Sophos Secure Web Gateway (add-on, limited)",
+        "threatIntel": "SophosLabs (integrated, good for SMB)",
+        "fabric": "Sophos Central cloud console (limited fabric concept)"
+      },
+      "strengths": [
+        "Strong SMB market presence and brand loyalty",
+        "Sophos Central unified management (good UX for segment)",
+        "Value-oriented pricing (competitive for <500 users)",
+        "Endpoint integration (Sophos Intercept X)"
+      ],
+      "weaknesses": [
+        "Performance ceiling caps at mid-market; not enterprise-grade",
+        "Less advanced threat hunting/automation vs. enterprise tier",
+        "Fabric concept absent; cloud-only management",
+        "SD-WAN/ZTNA offerings less mature"
+      ],
+      "vsFortigate": {
+        "performanceAdvantage": "FortiGate 4-10x throughput for enterprise scale; Sophos adequate for SMB only",
+        "scaleAdvantage": "FortiGate handles hyperscale data center; Sophos maxes at mid-market",
+        "fabricAdvantage": "FortiGate integrated hardware/software fabric vs. Sophos cloud-centric model",
+        "integratedAdvantage": "FortiGate SD-WAN + ZTNA native; Sophos ecosystem disjointed"
+      }
+    },
+    {
+      "vendor": "Juniper Networks",
+      "product": "SRX Series (NGFW)",
+      "category": "Enterprise/Service Provider",
+      "specs": {
+        "architecture": "Custom processors + x86 (Junos OS)",
+        "throughput": "Up to 1+ Tbps (SRX5000 line)",
+        "sslInspection": "Advanced, native integrated",
+        "sdwan": "Contrail SD-WAN (separate, operationally complex)",
+        "ztna": "Limited; not a Juniper strength",
+        "threatIntel": "Juniper Threat Labs (service provider focus)",
+        "fabric": "Routing/switching heritage; limited security fabric"
+      },
+      "strengths": [
+        "Extreme throughput for service providers (Tbps scale)",
+        "Deep routing/switching pedigree (Junos OS)",
+        "Strong in telecom/large ISP environments",
+        "Advanced routing + firewall in single OS"
+      ],
+      "weaknesses": [
+        "Steep learning curve (Junos OS != industry standard CLIs)",
+        "Operational complexity; not intuitive for security teams",
+        "Declining market share vs. cloud-native alternatives",
+        "SD-WAN story underdeveloped; Contrail complex",
+        "ZTNA essentially absent from product line"
+      ],
+      "vsFortigate": {
+        "operationalAdvantage": "FortiGate straightforward CLI/GUI; Junos requires specialized training",
+        "integratedAdvantage": "FortiGate modern fabric architecture; Juniper legacy routing mindset",
+        "relevanceAdvantage": "FortiGate optimal for mid-to-large enterprise; Juniper viable only for service providers",
+        "modernAdvantage": "FortiGate cloud-native ready; Juniper slower cloud adoption"
+      }
+    }
+  ]
+}
