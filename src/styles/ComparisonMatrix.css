@@ -1,0 +1,36 @@
+.comparison-matrix {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.comparison-error {
+  background-color: var(--color-bg);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  color: var(--color-danger);
+  text-align: center;
+  font-weight: 600;
+}
+
+.comparison-content {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
