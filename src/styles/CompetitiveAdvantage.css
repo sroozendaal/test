@@ -1,0 +1,141 @@
+.competitive-advantage {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.advantage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.column {
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+}
+
+.column h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.25rem;
+}
+
+.column.strengths {
+  background-color: #f0fdf4;
+  border: 2px solid #bbf7d0;
+}
+
+.column.strengths h3 {
+  color: var(--color-success);
+}
+
+.column.strengths .icon {
+  font-size: 1.5rem;
+}
+
+.column.weaknesses {
+  background-color: #fef2f2;
+  border: 2px solid #fecaca;
+}
+
+.column.weaknesses h3 {
+  color: var(--color-danger);
+}
+
+.column.weaknesses .icon {
+  font-size: 1.5rem;
+}
+
+.column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.column li {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-lg);
+  position: relative;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.column.strengths li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-success);
+  font-weight: 700;
+}
+
+.column.weaknesses li::before {
+  content: '✗';
+  position: absolute;
+  left: 0;
+  color: var(--color-danger);
+  font-weight: 700;
+}
+
+.fortigate-wins {
+  border-top: 2px solid var(--color-border);
+  padding-top: var(--spacing-xl);
+}
+
+.fortigate-wins h3 {
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-fortigate);
+  border-bottom: 2px solid rgba(238, 49, 36, 0.2);
+  padding-bottom: var(--spacing-md);
+}
+
+.advantages-list {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.advantage-item {
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg);
+  border-left: 4px solid var(--color-fortigate);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.advantage-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.advantage-item h4 {
+  color: var(--color-fortigate);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.1rem;
+}
+
+.advantage-item p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .advantage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .competitive-advantage {
+    padding: var(--spacing-lg);
+  }
+
+  .column {
+    padding: var(--spacing-lg);
+  }
+
+  .advantage-item {
+    padding: var(--spacing-md);
+  }
+}
